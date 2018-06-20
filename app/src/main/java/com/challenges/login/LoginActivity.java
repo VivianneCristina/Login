@@ -34,14 +34,14 @@ public class LoginActivity extends AppCompatActivity {
         salvar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                editor.putBoolean("", user.getText().toString()).commit();
+                editor.putString("", user.getText().toString()).commit();
             }
         });
 
         salvar.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                editor.putBoolean("", senha.getText().toString()).commit();
+                editor.putString("", senha.getText().toString()).commit();
             }
         });
 
