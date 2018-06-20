@@ -8,14 +8,16 @@ import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.util.Config;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText editTextUsuario;
-    private EditText editTextSenha;
-    private AppCompatButton buttonLogin;
-    private boolean loggegIn = false;
+    private EditText user, senha;
+    private Button salvar;
+
+    private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
 
     @Override
@@ -23,20 +25,29 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        SharedPreferences sharedPreferences = LoginActivity.this.getSharedPreferences(R.string.pref_key), Context.MODE_PRIVATE);
-        editor = sharedPreferences.edit();
+        user = findViewById(R.id.editUser);
+        senha = findViewById(R.id.editSenha);
+        salvar = findViewById(R.id.saveBtn);
 
-        editTextUsuario = (EditText) findViewById(R.id.editTextUsuario);
-        editTextSenha = (EditText) findViewById(R.id.editTextSenha);
+        init();
 
-        buttonLogin = (AppCompatButton) findViewById(R.id.buttonLogin);
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-
+        salvar.setOnClickListener(new View.OnClickListener(){
             @Override
-         public void onClick(View v){
-             login();
-         }
-        }
+            public void onClick(View v){
+                editor.putBoolean("", user.getText().toString()).commit();
+            }
+        });
 
+        salvar.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                editor.putBoolean("", senha.getText().toString()).commit();
+            }
+        });
+
+    }
+    private void init () {
+       preferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+       editor = preferences.edit();
     }
 }
