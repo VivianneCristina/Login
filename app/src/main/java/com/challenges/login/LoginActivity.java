@@ -1,6 +1,7 @@
 package com.challenges.login;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         if (preferences.getBoolean("logado", false)) {
             initActivity2();
 
-        }else{
+        } else {
             user = findViewById(R.id.editUser);
             senha = findViewById(R.id.editSenha);
             salvar = findViewById(R.id.saveBtn);
@@ -52,6 +53,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initActivity2 () {
+        Intent intent = new Intent(this, Results.class);
+        startActivity(intent);
 
     }
 }
