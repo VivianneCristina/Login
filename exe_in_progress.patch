@@ -1,0 +1,32 @@
+Index: app/src/main/java/com/challenges/login/LoginActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/challenges/login/LoginActivity.java	(revision 9b24c8f60d20e990dcfa424d07e11a33b27f63e6)
++++ app/src/main/java/com/challenges/login/LoginActivity.java	(date 1529611534591)
+@@ -3,10 +3,8 @@
+ import android.content.Context;
+ import android.content.Intent;
+ import android.content.SharedPreferences;
+-
+ import android.support.v7.app.AppCompatActivity;
+ import android.os.Bundle;
+-
+ import android.view.View;
+ import android.widget.Button;
+ import android.widget.EditText;
+diff --git .idea/caches/build_file_checksums.ser .idea/caches/build_file_checksums.ser
+index 444d87e8c328822e48bd0765f7d79ca7d1db9c1e..6f1678bfd55e634d4470c122431c8e016d9ac716
+GIT binary patch
+literal 537
+zc${1FmVvdnh`~NNKUXg?FQq6yGexf?KR>5fFEb@IQ7^qHF(oHeub?PDD>b=9F91S2
+zm1gFoxMk*~I%lLNXBU^|7Q2L-Ts|(GuF1r}<i#MFTj`TnT;dMa8(f)}9Fm!vT3nKt
+zTj0aMpIeEdv4nx&Co8cmQNOe#Ge_SyvB0{bfPsNAMScE19iY1eL2`N^IX#cW;tZfX
+zEBmd3hs6>uGBYr_F>vMNC#JY1CYR(Fc`|U8WE7<qXXNLkR20}dFn|D0IR}sw0AjWh
+z27$zaf|w+b)1lrfEn;Abc3SgU{0AFH$O9$@29VVZ0>10}L@!*K&%u(Zp7DL%dZQ8s
+z4QH#E(Bjmh;+V3`vdqL7sQws4=oF+Dm1L$CmliVAF|dIQxgy(hv!7uT%gYAN8E<|#
+z)dBrkoLW+nnU`J+vmLH>-pz!4Huu@{bQAQX!krE;EMee5aVA`0Rx|&p9ga2mXT!4d
+zj`_9k0QxB>KRGc6s|y^;R><r*IAL=2AKUWYJE1Nm41##v`?;5S)t-c<ew%F5jGvtq
+HNU8t;XnDK}
+

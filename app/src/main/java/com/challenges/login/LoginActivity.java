@@ -3,14 +3,13 @@ package com.challenges.login;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -41,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("User", user.getText().toString()).commit();
                     editor.putString("Senha", senha.getText().toString()).commit();
                     editor.putBoolean("logado", true).commit();
+                    Toast.makeText(LoginActivity.this, "Usuário foi criado", Toast.LENGTH_SHORT).show();
                     initActivity2();
                 }
             });
@@ -53,8 +53,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initActivity2 () {
-        Intent intent = new Intent(this, SecondActivity.class);
-        startActivity(intent);
+        Intent intentLogin = new Intent (LoginActivity.this, SecondActivity.class);
+        startActivity(intentLogin);
 
     }
 }

@@ -13,9 +13,7 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity {
 
     private TextView text;
-    private Button logout;
     private SharedPreferences preferences;
-    private SharedPreferences.Editor editor;
 
 
     @Override
@@ -24,18 +22,9 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         text = findViewById(R.id.text);
-        logout = findViewById(R.id.logoutBtn);
 
         preferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+        preferences.getBoolean("logado", false);
 
     }
-    @Override
-    public void onClick(View v) {
-        SharedPreferences preferences = .getSharedPreferences("Sair", Context.MODE_PRIVATE);
-        SharedPreferences.Editor saveEdit = save.edit();
-        SharedPreferences.Editor clear = saveEdit.clear();
-        saveEdit.apply();
-
-    }
-
 }
