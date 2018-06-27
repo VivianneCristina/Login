@@ -1,46 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:background="@drawable/fundoazul"
         tools:context=".CreateUserActivity">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/fundo_login"
+            android:orientation="vertical" >
 
         <EditText
             android:id="@+id/cadastroNome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nome" />
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="30dp"
+            android:hint="Name" />
+
+            <EditText
+                android:id="@+id/cadastroEmail"
+                android:layout_width="350dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                tools:layout_editor_absoluteX="60dp"
+                tools:layout_editor_absoluteY="30dp"
+                android:hint="Email" />
 
         <EditText
-            android:id="@+id/cadastroEnd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Endereço" />
+            android:id="@+id/cadastroSenha"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="30dp"
+            android:hint="Password" />
 
         <EditText
-            android:id="@+id/cadastroFone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Telefone" />
-
-        <EditText
-            android:id="@+id/cadastroEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email" />
+            android:id="@+id/confirmaSenha"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            tools:layout_editor_absoluteX="60dp"
+            tools:layout_editor_absoluteY="30dp"
+            android:hint="Confirm Password" />
 
         <Button
             android:id="@+id/btnSalvar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Salvar"/>
+            android:layout_width="85dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="45dp"
+            android:layout_margin="15dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#ffff"
+            android:background="@drawable/fundobtn"
+            android:text="Create"/>
 
-    </LinearLayout>
-</ScrollView>
+        </LinearLayout>
+    </RelativeLayout>
