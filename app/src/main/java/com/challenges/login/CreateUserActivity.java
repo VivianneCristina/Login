@@ -13,12 +13,13 @@ public class CreateUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
 
-        Button botaoSalvar = (Button) findViewById(R.id.btnSalvar);
+        Button botaoSalvar = findViewById(R.id.btnSalvar);
         botaoSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(CreateUserActivity.this, "Usuário Criado!", Toast.LENGTh_SHORT).show();
+                Toast.makeText(CreateUserActivity.this, "Usuário Criado!", Toast.LENGTH_SHORT).show();
             }
 
+        };
     }
 }
