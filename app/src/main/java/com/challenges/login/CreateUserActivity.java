@@ -20,6 +20,6 @@ public class CreateUserActivity extends AppCompatActivity {
                 Toast.makeText(CreateUserActivity.this, "Usuário Criado!", Toast.LENGTH_SHORT).show();
             }
 
-        };
+        });
     }
 }

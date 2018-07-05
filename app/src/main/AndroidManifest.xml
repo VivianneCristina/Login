@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".LoginActivity"
             android:label="Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,15 +19,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".SecondActivity"
+            android:name=".MenuProductsActivity"
             android:label="App">
+
         </activity>
 
         <activity
             android:name=".CreateUserActivity"
             android:label="Cadastro">
+
         </activity>
+        <activity
+            android:name=".ListCartActivity">
+
+        </activity>
+
     </application>
 
 </manifest>
