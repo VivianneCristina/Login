@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AlertController;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,20 +34,11 @@ public class MenuProductsActivity extends AppCompatActivity {
         preferences.getBoolean("logado", false);
 
 
-        recyclerView = findViewById(R.id.rc_list);
+        recyclerView = findViewById(R.id.rc_list2);
 
-        List<Market> products = gerarProdutos();
+        List<Market> products = getProducts();
 
-        recyclerView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-            }
-        });
-
-    }
-    public List<Market> gerarProdutos(){
-        List<Market> products = new ArrayList();
+        List<Market> products = new ArrayList<>();
         products.add(new Market("Ovo", "$5", R.drawable.produto1));
         products.add(new Market("Morango", "$5", R.drawable.produto2));
         products.add(new Market("Kiwi", "$5", R.drawable.produto3));
@@ -53,6 +46,19 @@ public class MenuProductsActivity extends AppCompatActivity {
 
         return products;
     }
+
+    private void setupRecyclerView(){
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        ItemAdapter = new ItemAdapter(getProducts());
+        recyclerView.setAdapter(ItemAdapter);
+
+        recyclerView.addItemDecoration(
+                new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+    }
+
 }
 
 

@@ -1,47 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MenuProductsActivity">
 
     <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
+        android:id="@+id/rc_list2"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:elevation="5dp"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/produto2"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_alignParentBottom="true"
-                android:padding="5dp"
-                android:background="#70000000">
-
-                <LinearLayout
-                    android:id="@+id/layout_text"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="2">
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </RelativeLayout>
+        tools:listitem="@layout/layout_menu">
 
     </android.support.v7.widget.CardView>
 
-</LinearLayout>
+</RelativeLayout>
