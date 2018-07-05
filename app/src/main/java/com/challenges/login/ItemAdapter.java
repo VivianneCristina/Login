@@ -32,6 +32,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemHolder> {
         Market product = products.get(position);
 
         holder.textName.setText(product.getNome());
+
         holder.textName.setText(product.getValor());
         holder.imageProfile.setImageResource(product.getImage());
         holder.ic_icon.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +43,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemHolder> {
 
     @Override
     public int getItemCount() {
-        return 0;
+        return products != null ? products.size() : 0;
     }
 
 }

@@ -17,7 +17,7 @@ import java.util.List;
 public class MenuProductsActivity extends AppCompatActivity {
 
     private TextView text;
-    private RecyclerView recyclerView;;
+    private RecyclerView recyclerView;
     private SharedPreferences preferences;
 
 
