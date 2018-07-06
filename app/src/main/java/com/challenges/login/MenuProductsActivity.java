@@ -6,6 +6,7 @@ import android.support.v7.app.AlertController;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -16,10 +17,13 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.support.v7.widget.AppCompatDrawableManager.get;
+
 public class MenuProductsActivity extends AppCompatActivity {
 
     private TextView text;
     private RecyclerView recyclerView;
+    private ItemAdapter itemAdapter;
     private SharedPreferences preferences;
 
 
@@ -36,6 +40,8 @@ public class MenuProductsActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.rc_list2);
 
+        setupRecyclerView();
+
         List<Market> products = getProducts();
 
         List<Market> products = new ArrayList<>();
@@ -49,11 +55,11 @@ public class MenuProductsActivity extends AppCompatActivity {
 
     private void setupRecyclerView(){
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
 
-        ItemAdapter = new ItemAdapter(getProducts());
-        recyclerView.setAdapter(ItemAdapter);
+        itemAdapter = new ItemAdapter(getBaseContext(), getProducts());
+        recyclerView.setAdapter(itemAdapter);
 
         recyclerView.addItemDecoration(
                 new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
