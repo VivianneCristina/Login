@@ -2,29 +2,23 @@ package com.challenges.login;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v7.app.AlertController;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.support.v7.widget.AppCompatDrawableManager.get;
 
 public class MenuProductsActivity extends AppCompatActivity {
 
     private TextView text;
+    private SharedPreferences preferences;
+
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;
-    private SharedPreferences preferences;
 
 
     @Override
@@ -40,20 +34,21 @@ public class MenuProductsActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.rc_list2);
 
-        setupRecyclerView();
+        setupRecycler();
 
-        List<Market> products = getProducts();
+    }
 
-        List<Market> products = new ArrayList<>();
-        products.add(new Market("Ovo", "$5", R.drawable.produto1));
-        products.add(new Market("Morango", "$5", R.drawable.produto2));
-        products.add(new Market("Kiwi", "$5", R.drawable.produto3));
-        products.add(new Market("Uva", "$5", R.drawable.produto4));
+        private List<Market> getProducts(){
+            List<Market> products = new ArrayList<>();
+            products.add(new Market("Ovo", "$5", R.drawable.produto1));
+            products.add(new Market("Morango", "$5", R.drawable.produto2));
+            products.add(new Market("Kiwi", "$5", R.drawable.produto3));
+            products.add(new Market("Uva", "$5", R.drawable.produto4));
 
         return products;
     }
 
-    private void setupRecyclerView(){
+    private void setupRecycler(){
 
         LinearLayoutManager layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
@@ -63,9 +58,8 @@ public class MenuProductsActivity extends AppCompatActivity {
 
         recyclerView.addItemDecoration(
                 new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        }
     }
-
-}
 
 
 

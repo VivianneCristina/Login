@@ -21,7 +21,7 @@ public class ListCartActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.rc_list);
 
-        setupRecyclerView();
+        setupRecycler();
 
     }
     public List<Market> getProducts(){
@@ -34,12 +34,12 @@ public class ListCartActivity extends AppCompatActivity {
         return products;
     }
 
-    private void setupRecyclerView(){
+    private void setupRecycler(){
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        ItemAdapter = new ItemAdapter(getProducts());
+        ItemAdapter = new ItemAdapter(getBaseContext(), getProducts());
         recyclerView.setAdapter(ItemAdapter);
 
         recyclerView.addItemDecoration(

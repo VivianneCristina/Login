@@ -4,8 +4,7 @@ import android.view.View;
 
 public class Market {
 
-    private String nome;
-    private String valor;
+    private String nome, valor;
     private int image;
 
     public Market(String nome, String valor, int image) {
@@ -14,7 +13,7 @@ public class Market {
         this.image = image;
     }
 
-    public Market(View inflate){
+    public Market(){
 
     }
 
